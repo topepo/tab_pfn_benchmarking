@@ -1,0 +1,7 @@
+*.out.log
+*.err.log
+*.ps.raw
+.Rproj.user
+lib
+bin
+Syrupy

@@ -1,0 +1,11 @@
+PID,DATE,TIME,ELAPSED,CPU,MEM,RSS,VSIZE,CMD
+33089,2025-10-20,11:17:38,00:00,0.0,0.0,240,410015504,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:39,00:01,98.8,0.4,267424,411820848,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:40,00:02,34.8,0.6,408320,412169120,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:41,00:03,65.2,0.7,470768,412282960,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:42,00:04,35.1,0.9,574944,413711392,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:43,00:05,11.9,0.9,600448,415000384,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:44,00:06,5.7,0.9,611728,415003808,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:45,00:07,16.9,0.9,635808,415012128,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:46,00:08,10.4,1.0,640176,415013152,/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python 2_4998_bench.py
+33089,2025-10-20,11:17:47,00:09,78.0,1.0,656224,414906576,(Python)
