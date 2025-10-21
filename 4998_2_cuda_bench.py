@@ -5,14 +5,14 @@ import numpy as np
 from tabpfn import TabPFNClassifier
 
 # Execute from command line with
-# syrupy.py -i 1 -t 2_4998_gpu --separator=, --no-align python3 2_4998_gpu_bench.py
+# syrupy.py -i 1 -t 4998_2_cuda --separator=, --no-align python3 4998_2_cuda_bench.py
 
 # ------------------------------------------------------------------------------
 
-num_train = 2
-num_pred = 4998
+num_train = 4998
+num_pred = 2
 
-nm = str(num_train) + "_" + str(num_pred) + "_gpu_summary.csv"
+nm = str(num_train) + "_" + str(num_pred) + "_cuda_summary.csv"
 
 # ------------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ session_data = {
     "num_pred": len(te_x),
     "pred_time": pred_time,
     "pid": os.getpid(),
-    "gpu": "yes",
+    "gpu": "cuda",
 }
 
 session_data = pd.DataFrame(session_data, index=[0])
