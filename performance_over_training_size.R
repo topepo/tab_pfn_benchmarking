@@ -1,39 +1,42 @@
-reticulate::use_virtualenv("./tab_pfn")
-
-# reticulate::py_config()
-# reticulate::py_list_packages(envname = "tab_pfn", type = "virtualenv")
-
 library(tidymodels)
-library(TabPFN)
-
-load("~/github/website/RData/forested_data.RData")
+library(readr)
 
 # ------------------------------------------------------------------------------
 
-set.seed(3823)
-mod_1 <- tab_pfn(
-  class ~ .,
-  data = forested_train |> dplyr::slice_sample(n = 1, by = class)
-)
-
+tidymodels_prefer()
+theme_set(theme_bw())
+options(pillar.advice = FALSE, pillar.min_title_chars = Inf)
 
 # ------------------------------------------------------------------------------
-# Measure effect of different "training set" sizes
 
-size_grid <- c(1, (1:15) * 100)
+all_pred <-
+  read_csv("predictions_by_training_size.csv") |>
+  mutate(class = factor(class, levels = c("Yes", "No")))
 
-pred_over_size <- NULL
 
-for (i in size_grid) {
-  set.seed(3823)
-  mod_i <- tab_pfn(
-    class ~ .,
-    data = forested_train |> dplyr::slice_sample(n = i, by = class)
-  )
+all_times <-
+  read_csv("predictions_by_training_size_times.csv")
 
-  pred_i <- predict(mod_i, forested_test, type = "prob") |>
-    bind_cols(forested_test) |>
-    select(.pred_Yes, class) |>
-    mutate(training_size = i)
-  pred_over_size <- bind_rows(pred_over_size, pred_i)
-}
+all_pred |>
+  group_by(num_train) |>
+  brier_class(class, .pred_Yes) |>
+  ggplot(aes(num_train, .estimate)) +
+  geom_point() +
+  geom_smooth() +
+  scale_x_log10()
+
+
+all_pred |>
+  group_by(num_train) |>
+  roc_auc(class, .pred_Yes) |>
+  ggplot(aes(num_train, .estimate)) +
+  geom_point() +
+  geom_smooth(span = .2) +
+  scale_x_log10()
+
+
+all_times |>
+  ggplot(aes(num_train, time / 60)) +
+  geom_point() +
+  geom_smooth(span = .4) +
+  scale_x_log10()
